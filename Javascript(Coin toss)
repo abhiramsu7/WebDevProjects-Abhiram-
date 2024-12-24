@@ -1,0 +1,44 @@
+const coin = document.querySelector("#coin");
+const button = document.querySelector("#flip");
+
+const statusLabel = document.querySelector("#status");
+const headsCountElement = document.querySelector("#headcount");
+const tailsCountElement = document.querySelector("#tailscount");
+
+let headsCount = 0;
+let tailsCount = 0;
+let isFlipping = false; // Prevent multiple clicks during animation
+
+function flipCoin() {
+    if (isFlipping) return; // Prevent overlapping flips
+    isFlipping = true; // Lock further flips during animation
+
+    const result = Math.random() < 0.5 ? "heads" : "tails";
+
+    // Reset animation
+    coin.style.animation = "none";
+    void coin.offsetWidth; // Trigger reflow to reset animation
+
+    // Add the appropriate animation based on the result
+    const spins = 2; // Reduce duration to 2 seconds for faster spins
+    const animation = result === "heads"
+        ? `spinHeads ${spins}s ease-out`
+        : `spinTails ${spins}s ease-out`;
+    coin.style.animation = animation;
+
+    // Wait for the animation to complete before updating the result
+    setTimeout(() => {
+        if (result === "heads") {
+            headsCount++;
+            headsCountElement.textContent = headsCount;
+        } else {
+            tailsCount++;
+            tailsCountElement.textContent = tailsCount;
+        }
+        statusLabel.textContent = result.toUpperCase();
+        isFlipping = false; // Unlock for the next flip
+    }, spins * 1000); // Match duration with spin seconds
+}
+
+// Event listener for the flip button
+button.addEventListener("click", flipCoin);
