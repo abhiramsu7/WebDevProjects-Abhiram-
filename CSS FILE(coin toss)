@@ -1,0 +1,93 @@
+ body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to right,rgb(255,204,0),rgb(255,153,0));
+ }
+
+ .container{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+ }
+
+ button{
+    padding: 1rem;
+    background-color: blanchedalmond;
+ }
+
+ #coin{
+    position: relative;
+    width: 15rem;
+    height: 15rem;
+    margin: 2rem 0rem;
+    transform-style: preserve-3d;
+ }
+
+ #coin div{
+    width: 100%;
+    height: 100%;
+    border: 2px solid black;
+    border-radius: 50%;
+    backface-visibility: hidden;
+    background-size: contain;
+    position: absolute;
+ }
+
+ .headsClass{
+    background-image: url("https://cdn.pixabay.com/photo/2013/07/12/14/27/bronze-148228_640.png");
+ }
+
+ .animate-heads{
+    animation: flipHeads 1s;
+    animation-fill-mode: forwards;
+ }
+
+ @keyframes flipHeads {
+    from{
+        transform : rotateY(0deg);
+    }
+    to{
+        transform: rotateY(180deg);
+    }
+ }
+
+ .tailsClass{
+    background-image: url("https://cdn.pixabay.com/photo/2016/03/31/15/03/phoenix-1292958_640.png");
+    transform: rotateY(-180deg);
+ }
+
+ .animate-tails{
+    animation: flipTails 1s;
+    animation-fill-mode: forwards;
+ }
+
+ @keyframes flipTails {
+    from{
+        transform : rotateY(0deg);
+    }
+    to{
+        transform: rotateY(1620deg);
+    }
+ }
+
+ @keyframes spinHeads {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(1800deg); /* Multiple rotations (5 full spins) */
+    }
+}
+
+@keyframes spinTails {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(1980deg); /* 5 full spins plus half for tails */
+    }
+}
