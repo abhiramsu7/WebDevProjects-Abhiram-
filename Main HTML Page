@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Online Head/Tails</title>
+        <link rel="stylesheet" , href="style.css">
+    </head>
+    <body>
+        <div class="container">
+
+            <div id="coin" class="">
+                <div id="heads" class="headsClass"></div>
+                <div id="tails" class="tailsClass"></div>
+            </div>
+
+            <button id="flip">Flip The Coin</button>
+            <p>Heads:<span id="headcount">0</span>     Tails:<span
+            id="tailscount">0</span>   
+            </p>
+            
+            <p><span id="status"></span></p>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
