@@ -1,0 +1,16 @@
+function convertLbstokg(){
+    
+    const LbsInput = document.getElementById("Lbs");
+    const KgInput = document.getElementById("Kg");
+
+    if(!isNaN(LbsInput.value)){
+
+        const LbsValue = parseFloat(LbsInput.value);
+        const KgValue = (LbsValue*0.453592);
+
+        KgInput.value = KgValue.toFixed(3);
+
+    }else{
+        alert("Please enter a Valid Number")
+    }
+}
