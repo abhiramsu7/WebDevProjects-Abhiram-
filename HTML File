@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Pounds to Kilogram Converter</title>
+        <link rel="stylesheet", href="style.css">
+    </head>
+    <body>
+        <div class="card">
+            <h2>Pound-kilogram Converter</h2>
+            <div class="input-container">
+                <label for = "Lbs">Lbs:</label>
+                <input type="text" id="Lbs" oninput="convertWeight()" placeholder="Enter weight in lbs">
+    
+            </div>
+            <div class="input-container">
+                <label for = "Kg">Kg:</label>
+                <input type="text" id="Kg" oninput="convertWeight()" placeholder="Enter weight in kg">
+            </div>
+            <button onclick="convertLbstokg()">Convert</button>
+        </div>
+        <script src="javascript.js"></script>
+    </body>
+</html>
