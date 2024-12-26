@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>Slide to complete 100%</title>
+        <link rel="stylesheet", href="style.css">
+    </head>
+    <body>
+        <section>
+            <div>
+                <h2 id="rangeValue">0</h2>
+                <input type="range" class="range" id="_range"
+                    value="0" min="0" max="100"
+                    >
+            </div>
+        </section>
+
+        <script src="bg.js"></script>
+    </body>
+</html>
